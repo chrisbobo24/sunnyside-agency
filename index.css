@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+img {
+    max-width: 100%;
+
+}
+
+:root {
+--Softred: hsl(7, 99%, 70%);
+--Yellow:hsl(51, 100%, 49%);
+--Darkdesaturatedcyan: hsl(167, 40%, 24%);
+--Darkblue: hsl(198, 62%, 26%);
+--Darkmoderatecyan: hsl(168, 34%, 41%);
+--Verydarkdesaturatedblue: hsl(212, 27%, 19%);
+--Verydarkgrayishblue: hsl(213, 9%, 39%);
+--Darkgrayishblue: hsl(232, 10%, 55%);
+--Grayishblue: hsl(210, 4%, 67%);
+--White: hsl(0, 0%, 100%);
+}
+
+body {
+    font-size: 18px;
+    font-family: 'Barlow', sans-serif;
+}
+
+h1, h2, h3, h4, a{
+    font-family:  'Fraunces', serif;;
+}
+
+header {
+    background-image: url('./images/desktop/image-header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: var(--White);
+    padding-top: 2rem;
+    padding-bottom: 10rem;
+    
+}
+
+nav.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 2.5vw;
+    margin-bottom: 5rem;
+    
+}
+
+.navigation_links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin-top: 2rem;
+    color: var(--White);
+    
+}
+
+.navigation_links a {
+    color: var(--Verydarkdesaturatedblue);
+    text-decoration: none;
+    background-color: var(--White);
+    padding: 0.7em 1.5em;
+    border-radius: 100px;
+    
+}
+
+header h1 {
+    text-align: center;
+    text-transform:uppercase ;
+    margin-bottom: 4rem;
+    letter-spacing: 5px;
+    
+
+}
+
+header > img {
+    position: relative;
+    left: 50%;
+    animation: bounce 2s infinite;
+
+}
+
+@keyframes bounce {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0%);
+    }
+
+}
+
+@media (max-width: 700px) {
+.navigation_links {
+    /*display: none;*/
+    transform: scaleY(0);
+    transition: 0.4s;
+    transform-origin: left;
+    position: absolute;
+    top: 6rem;
+    padding-block: 3rem;
+    background-color: var(--White);
+    color: var(--Darkblue);
+    width: 90vh;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    z-index: 100;
+
+}
+
+
+.navigation_links a {
+    background-color: var(--Yellow);
+}
+
+nav.navigation {
+    padding: inline 5vw;
+}
+
+.hamburger{
+    display: block;
+}
+}
+
+
+
+
+.mobile {
+    display: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex article {
+    width: 50%;
+    padding-inline: min(8rem, 10vw);
+}
+
+.flex div {
+    width: 50%;
+}
+
+.flex article h2 {
+    margin-bottom: 2rem;
+    font-weight: 900;
+    font-size: clamp(1.2rem, 2vw + 0.7rem, 2.5rem);
+    color:var(--Very-dark-desaturated-blue);
+}
+
+.flex article p {
+    margin-bottom: 2rem;
+    color: var(--Very-dark-grayish-blue);
+}
+
+.flex article a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--Very-dark-desaturated-blue);
+    font-size: clamp(0.9rem, 0.2vw + 0.9rem, 1rem);;
+    position: relative;
+}
+
+.flex article a::before {
+    content:"" ;
+    width: 100%;
+    height:7px ;
+    background-color: var(--Yellow);
+    position: absolute;
+    bottom: -1px;
+    border-radius: 4px;
+    z-index: -1;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.reverse article a::before {
+    background-color: var(--Softred);
+}
+
+@media (max-width: 760px) {
+    .flex {
+        flex-direction: column-reverse;
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .flex article, .flex div {
+        width: 100%;
+    }
+
+    .flex article {
+        text-align: center;
+    }
+       
+    }
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+
+
+/* my work */
+
+section.flex-start {
+    display: flex;
+    margin-top: -4px;
+}
+
+section.flex-start div {
+    position: relative;
+    width: 50%;
+}
+
+section.flex-start article {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translate(-50%);
+    color: var(--Dark-desaturated-cyan);
+    text-align: center;
+    width: min(90%, 350px);
+}
+
+section.flex-start h2 {
+    font-size:clamp(1rem, 0.6vw + 0.9rem, 1.4rem);
+    margin-bottom: 1rem;
+}
+
+section.flex-start p {
+    font-size:clamp(0.9rem, 0.2vw + 0.9rem, 1rem);
+}
+
+@media (max-width: 650px) {
+    section.flex-start {
+        flex-direction: column;
+    }
+
+    section.flex-start > div:nth-child(2) {
+        margin-top: -4px;
+    }section.flex-start article {
+        bottom: 1.5rem;
+    }
+}
+
+
+
+
+  
